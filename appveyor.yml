@@ -21,6 +21,6 @@ install:
 build_script:
 - npm install
 
-- node jd_fruit.js
-
-# - sh: ls jd_*.js | xargs -i node {}
+- sh: >-
+  ls jd_*.js | xargs -i node {}
+#- node jd_fruit.js

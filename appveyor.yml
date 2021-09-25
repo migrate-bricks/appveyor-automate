@@ -12,11 +12,11 @@ clone_script:
   - git clone "https://gitee.com/LinRaise/Auto-jd.git" .
 install:
   - sh: >-
-      nvm install node |
-      nvm install-latest-npm |
-      node -v |
-      npm -v |
+      nvm install node 
+      nvm install-latest-npm 
+      node -v 
+      npm -v 
+      npm install
 build_script:
   - sh: >-
-      npm install |
       ls jd_*.js | xargs -i node {}

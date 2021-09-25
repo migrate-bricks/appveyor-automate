@@ -9,7 +9,7 @@ init:
   - ps: git config --global credential.helper store
   - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://oauth2:$($env:access_token)@gitee.com`n" -NoNewline
 clone_script:
-- git clone "https://gitee.com/LinRaise/Auto-jd.git"
+- git clone "https://gitee.com/LinRaise/Auto-jd.git" .
 install:
 - ps: >-
     node -v

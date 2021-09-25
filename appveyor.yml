@@ -1,0 +1,24 @@
+version: 1.0.{build}
+image: Ubuntu2004
+init:
+- sh: echo Init script
+clone_script:
+- sh: git clone "https://oauth2:$($env:API_GITEE_TOKEN)@gitee.com/LinRaise/auto-jd.git" .
+environment:
+  API_GITEE_TOKEN:
+    secure: K199qWuP1K8338fEplq9uOKZdYJiFaVl2pWjizcgrU5DXna/Rn5ac5P6WbSnuscb
+install:
+- sh: >-
+    npm install
+build_script:
+- sh: ls jd_*.js | xargs -i node {}
+test_script:
+- sh: echo test
+on_success:
+- sh: echo success
+on_failure:
+- sh: echo Ooops, failed!
+on_finish:
+- sh: echo Well done, build completed!
+on_image_bake:
+- sh: echo Image bake script

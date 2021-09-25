@@ -9,16 +9,15 @@ environment:
   access_token:
     secure: K199qWuP1K8338fEplq9uOKZdYJiFaVl2pWjizcgrU5DXna/Rn5ac5P6WbSnuscb
 init:
-   - sh: git config --global credential.helper store
-   - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://oauth2:$($env:access_token)@gitee.com`n" -NoNewline
+  - sh: git config --global credential.helper store
+  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://oauth2:$($env:access_token)@gitee.com`n" -NoNewline
    # - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
-clone_script:
-  - sh: git clone "https://gitee.com/LinRaise/auto-jd.git" .
+
 install:
-  - ps: Install-Product node 12
+  - sh: git clone "https://gitee.com/LinRaise/auto-jd.git" .
   - npm install
-build_script:
   - node jd_bean_sign.js
+build_script: off
   # - sh: ls jd_*.js | xargs -i node {}
 test: off
 on_success:

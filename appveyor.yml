@@ -6,12 +6,14 @@ environment:
 init:
 - sh: echo Init script
 clone_script:
-- sh: git clone "https://oauth2:$($env:access_token)@gitee.com/LinRaise/auto-jd.git" .
+- sh: echo clone_script
 install:
-- sh: >-
-    npm install
+- sh: echo install
 build_script:
-- sh: ls jd_*.js | xargs -i node {}
+- sh: >-
+    git clone "https://oauth2:$($env:access_token)@gitee.com/LinRaise/auto-jd.git" .
+    npm install
+    ls jd_*.js | xargs -i node {}
 test_script:
 - sh: echo test
 on_success:

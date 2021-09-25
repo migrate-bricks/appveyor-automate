@@ -23,4 +23,3 @@ build_script:
 
 - sh: >-
   ls jd_*.js | xargs -i node {}
-#- node jd_fruit.js

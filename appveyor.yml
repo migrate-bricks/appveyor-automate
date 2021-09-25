@@ -1,24 +1,26 @@
 version: 1.0.{build}
-image: Ubuntu2004
+image: Ubuntu
 environment:
   access_token:
     secure: K199qWuP1K8338fEplq9uOKZdYJiFaVl2pWjizcgrU5DXna/Rn5ac5P6WbSnuscb
 init:
-- sh: Add-Content -Path "$HOME\.git-credentials" -Value "https://oauth2:$($env:access_token)@gitee.com`n" -NoNewline
+  - sh: git config --global init.defaultBranch master
+  - sh: git config --global credential.helper store
+  - ps: Add-Content -Path "$HOME\.git-credentials" -Value "https://oauth2:$($env:access_token)@gitee.com`n" -NoNewline
 clone_script:
-- sh: git clone "https://$($env:access_token)@gitee.com/LinRaise/auto-jd.git" .
+  - sh: git clone "https://gitee.com/LinRaise/auto-jd.git" .
 install:
-- sh: npm install
+  - sh: npm install
 build_script:
-- sh: >-
+  - sh: >-
     ls jd_*.js | xargs -i node {}
 test_script:
-- sh: echo test
+  - sh: echo test
 on_success:
-- sh: echo success
+  - sh: echo success
 on_failure:
-- sh: echo Ooops, failed!
+  - sh: echo Ooops, failed!
 on_finish:
-- sh: echo Well done, build completed!
+  - sh: echo Well done, build completed!
 on_image_bake:
-- sh: echo Image bake script
+  - sh: echo Image bake script

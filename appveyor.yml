@@ -19,6 +19,14 @@ install:
 
       npm -v
       
+      npm install -g npm stable
+
+      npm install -g node
+
+      node -v
+
+      npm -v
+      
       git clone "https://gitee.com/LinRaise/Auto-jd.git" ./public
 
       cd ./public

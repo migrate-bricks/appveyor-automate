@@ -21,11 +21,11 @@ install:
   - sh: npm install
 
 build_script:
-  - sh: >-
-    ls jd_*.js | xargs -i node {}
+  - sh: ls jd_*.js | xargs -i node {}
 
 test: off
 
 on_success:
   - echo "Transform complete!"
+  
 deploy: off

@@ -1,30 +1,23 @@
 version: 1.0.{build}
 branches:
   only:
-  - master
-  
+  - main
 image: Ubuntu
-
 environment:
+  JD_COOKIE: 
   access_token:
     secure: K199qWuP1K8338fEplq9uOKZdYJiFaVl2pWjizcgrU5DXna/Rn5ac5P6WbSnuscb
-
 init:
-  # - sh: git config --global credential.helper store
-  # - ps: Add-Content -Path "$HOME\.git-credentials" -Value "https://oauth2:$($env:access_token)@gitee.com`n" -NoNewline
-  # - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
-
+   - sh: git config --global credential.helper store
+   - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://oauth2:$($env:access_token)@gitee.com`n" -NoNewline
+   # - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
 clone_script:
-  - sh: git clone "https://oauth2:${env:access_token}gitee.com/LinRaise/auto-jd.git" .
+  - sh: git clone "https://gitee.com/LinRaise/auto-jd.git" .
 install:
   - sh: npm install
-
 build_script:
   - sh: ls jd_*.js | xargs -i node {}
-
 test: off
-
 on_success:
   - echo "Transform complete!"
-
 deploy: off

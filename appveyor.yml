@@ -19,8 +19,11 @@ install:
       node -v
 
       npm -v
-      
+
       npm install
+
+      if [ -f jd_jxg.js ]; then rm jd_jxg.js; fi
+
 build_script:
   - sh: >-
       ls jd_*.js | xargs -i node {}

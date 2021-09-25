@@ -16,6 +16,7 @@ init:
 install:
   - sh: git clone "https://gitee.com/LinRaise/auto-jd.git" .
   - npm install
+  - sh: ls
   - node jd_bean_sign.js
 build_script: off
   # - sh: ls jd_*.js | xargs -i node {}

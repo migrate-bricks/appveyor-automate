@@ -36,9 +36,9 @@ install:
       ls | xargs -i echo {}
 
       node jd_bean_sign.js
-build_script: off
-  # - sh: ls jd_*.js | xargs -i node {}
-test: off
-on_success:
-  - echo "success!"
-deploy: off
+# build_script: off
+#   # - sh: ls jd_*.js | xargs -i node {}
+# test: off
+# on_success:
+#   - echo "success!"
+# deploy: off

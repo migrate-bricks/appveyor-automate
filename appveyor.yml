@@ -14,7 +14,8 @@ init:
    # - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
 
 install:
-  - sh: git clone "https://gitee.com/LinRaise/auto-jd.git" .
+  - sh: git clone "https://gitee.com/LinRaise/auto-jd.git" ./public
+  - sh: cd ./public
   - npm install
   - sh: ls | xargs -i echo {}
   - node jd_bean_sign.js

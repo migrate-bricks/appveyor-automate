@@ -4,17 +4,13 @@ environment:
   access_token:
     secure: K199qWuP1K8338fEplq9uOKZdYJiFaVl2pWjizcgrU5DXna/Rn5ac5P6WbSnuscb
 init:
-- sh: echo Init script
+- sh: Add-Content -Path "$HOME\.git-credentials" -Value "https://oauth2:$($env:access_token)@gitee.com`n" -NoNewline
 clone_script:
-- sh: echo clone_script
+- sh: git clone "https://$($env:access_token)@gitee.com/LinRaise/auto-jd.git" .
 install:
-- sh: echo install
+- sh: npm install
 build_script:
 - sh: >-
-    git clone "https://$($env:access_token)@gitee.com/LinRaise/auto-jd.git" .
-
-    npm install
-
     ls jd_*.js | xargs -i node {}
 test_script:
 - sh: echo test

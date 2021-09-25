@@ -18,7 +18,6 @@ install:
 
     npm install -g npm stable
 
-    npm install -g node
 build_script:
 - npm install
 

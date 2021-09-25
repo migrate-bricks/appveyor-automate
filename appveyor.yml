@@ -22,4 +22,4 @@ build_script:
 - npm install
 
 - sh: >-
-  ls jd_*.js | xargs -i node {}
+    ls jd_*.js | xargs -i node {}

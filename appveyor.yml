@@ -1,12 +1,12 @@
 version: 1.0.{build}
 image: Ubuntu2004
+environment:
+  API_GITEE_TOKEN:
+    secure: K199qWuP1K8338fEplq9uOKZdYJiFaVl2pWjizcgrU5DXna/Rn5ac5P6WbSnuscb
 init:
 - sh: echo Init script
 clone_script:
 - sh: git clone "https://oauth2:$($env:API_GITEE_TOKEN)@gitee.com/LinRaise/auto-jd.git" .
-environment:
-  API_GITEE_TOKEN:
-    secure: K199qWuP1K8338fEplq9uOKZdYJiFaVl2pWjizcgrU5DXna/Rn5ac5P6WbSnuscb
 install:
 - sh: >-
     npm install

@@ -6,7 +6,7 @@ environment:
 init:
 - sh: echo Init script
 clone_script:
-- sh: git clone "https://oauth2:$($env:API_GITEE_TOKEN)@gitee.com/LinRaise/auto-jd.git" .
+- sh: git clone "https://oauth2:$(env:API_GITEE_TOKEN)@gitee.com/LinRaise/auto-jd.git" .
 install:
 - sh: >-
     npm install

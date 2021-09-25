@@ -1,5 +1,5 @@
 version: 1.0.{build}
-image: Ubuntu1604
+image: Ubuntu
 environment:
   JD_COOKIE:
     secure: viXNDVb511n0H20Z4AB4BteWPoewXGA5Ff3eqbiVV4syxeAH6x9XCSB1SMMnPtPtrN1KIzlAOw14nnTy0Jhak5V8tbxobFtp0w/d9qpCCK9Zz+rXEQ36DPHjknXbsRgULucsxhokR5Kd9zvZyq7hZg==
@@ -16,8 +16,7 @@ install:
       nvm install-latest-npm
       node -v
       npm -v
+      npm install
 build_script:
-  - npm install
-
   - sh: >-
       ls jd_*.js | xargs -i node {}

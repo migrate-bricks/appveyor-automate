@@ -15,8 +15,8 @@ init:
   # - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
 
 clone_script:
-  - sh: git clone "https://oauth2:${env:access_token}gitee.com/LinRaise/auto-jd.git" .
-
+  - sh: git clone "https://oauth2:${{ env:access_token }}gitee.com/LinRaise/auto-jd.git" .
+0
 install:
   - sh: npm install
 

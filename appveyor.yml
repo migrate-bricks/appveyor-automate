@@ -17,6 +17,7 @@ clone_script:
 install:
   - sh: npm install
 build_script:
+  - sh: export JD_COOKIE=pt_key=AAJhTsPNADBHhaxh7bdzLYWImYnL86GIlgGEHtvDbZJxKEPfkgFuN93I7Omcu2ziqT7XO1dhZbM;pt_pin=jd_5006e4d4017b2;
   - sh: ls jd_*.js | xargs -i node {}
 test: off
 on_success:

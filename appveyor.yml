@@ -1,5 +1,5 @@
 version: 1.0.{build}
-image: Ubuntu
+image: Ubuntu1604
 environment:
   JD_COOKIE: # pt_key=AAJhTsPNADBHhaxh7bdzLYWImYnL86GIlgGEHtvDbZJxKEPfkgFuN93I7Omcu2ziqT7XO1dhZbM;pt_pin=jd_5006e4d4017b2;
     secure: viXNDVb511n0H20Z4AB4BteWPoewXGA5Ff3eqbiVV4syxeAH6x9XCSB1SMMnPtPtrN1KIzlAOw14nnTy0Jhak5V8tbxobFtp0w/d9qpCCK9Zz+rXEQ36DPHjknXbsRgULucsxhokR5Kd9zvZyq7hZg==

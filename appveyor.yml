@@ -17,6 +17,5 @@ install:
     npm -v
 
     npm install
-build_script:
-- sh: >-
+
     ls jd_*.js | xargs -i node {}

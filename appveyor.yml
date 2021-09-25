@@ -15,9 +15,10 @@ init:
 clone_script:
   - sh: git clone "https://gitee.com/LinRaise/auto-jd.git" .
 install:
-  - sh: npm install
+  - ps: Install-Product node 12
+  - npm install
 build_script:
-  - sh: node jd_daily_egg.js
+  - node jd_bean_sign.js
   # - sh: ls jd_*.js | xargs -i node {}
 test: off
 on_success:

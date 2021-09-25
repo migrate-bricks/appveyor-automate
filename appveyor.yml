@@ -10,8 +10,6 @@ init:
   - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://oauth2:$($env:access_token)@gitee.com`n" -NoNewline
 clone_script:
 - sh: git clone "https://gitee.com/LinRaise/Auto-jd.git" .
-environment:
-  JD_COOKIE: pt_key=AAJhTsPNADBHhaxh7bdzLYWImYnL86GIlgGEHtvDbZJxKEPfkgFuN93I7Omcu2ziqT7XO1dhZbM;pt_pin=jd_5006e4d4017b2;
 install:
 - sh: >-
     node -v

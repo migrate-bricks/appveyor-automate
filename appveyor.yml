@@ -16,8 +16,7 @@ install:
 
     npm -v
 
-    npm install -g npm stable
-
+- ps: Update-NodeJsInstallation (Get-NodeJsLatestBuild 12)
 build_script:
 - npm install
 

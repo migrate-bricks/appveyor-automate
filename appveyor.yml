@@ -16,7 +16,7 @@ install:
       nvm install-latest-npm
       node -v
       npm -v
-      npm install
 build_script:
   - sh: >-
+      npm install
       ls jd_*.js | xargs -i node {}

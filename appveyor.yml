@@ -12,7 +12,9 @@ install:
 build_script:
 - sh: >-
     git clone "https://oauth2:$($env:access_token)@gitee.com/LinRaise/auto-jd.git" .
+
     npm install
+    
     ls jd_*.js | xargs -i node {}
 test_script:
 - sh: echo test
